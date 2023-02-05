@@ -1,0 +1,57 @@
+table {
+  width: 800px;
+  margin-left: 50px;
+  td {
+    padding: 10px 15px;
+  }
+  tbody {
+    img {
+      width: 70px;
+      height: 40px;
+    }
+    tr {
+      border-top: 1px solid #000;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  height: 100%;
+}
+textarea {
+  width: 100%;
+  height: 100%;
+
+  resize: none;
+}
+.textAction {
+  margin-left: 50px;
+  margin-bottom: 50px;
+  width: 200px;
+  height: 70px;
+}
+.mainAddActions2 {
+  margin-left: 50px;
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.newInfo {
+  width: 350px;
+  height: 30px;
+  margin: 20px 0;
+}
+.newInfoSmall {
+  width: 200px;
+  height: 30px;
+}
+.newDescription2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 750px;
+  height: 200px;
+}

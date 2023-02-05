@@ -1,0 +1,119 @@
+<div class="actions-container">
+  <button
+    (click)="textAction = !textAction"
+    class="textAction"
+    type="button"
+    [textContent]="textAction ? 'Open product form' : 'Cloose product form'"
+  ></button>
+  <ng-container *ngIf="!textAction">
+    <div>
+      <form
+        [formGroup]="productsForm"
+        class="mainAddActions2"
+        (ngSubmit)="addAction()"
+      >
+        <select class="newInfo" name="category" formControlName="category">
+          <option
+            *ngFor="let category of adminCategorys"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+          <option value="souces">souces</option>
+        </select>
+        <div class="newInfo">
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="Name of product..."
+          />
+        </div>
+        <div class="newInfoSmall">
+          <input
+            formControlName="path"
+            type="text"
+            placeholder="write Path here..."
+          />
+        </div>
+        <div class="newInfoSmall">
+          <input
+            formControlName="weight"
+            type="number"
+            placeholder="write Weight here..."
+          />
+        </div>
+        <div class="newInfoSmall">
+          <input
+            formControlName="price"
+            type="number"
+            placeholder="write Price here..."
+          />
+        </div>
+        <div class="newDescription2">
+          <textarea
+            formControlName="consist"
+            placeholder="write consist here..."
+          ></textarea>
+        </div>
+        <div *ngIf="!isUploaded">
+          <div class="newInfo">
+            <input type="file" id="formFile" (change)="upload($event)" />
+          </div>
+          <h2>Percent:{{ uploadPercentage }}</h2>
+        </div>
+        <div *ngIf="isUploaded">
+          <img
+            width="400px "
+            height="300px"
+            [src]="valueByControl('imagePath')"
+            alt=""
+          />
+          <button type="button" (click)="deleteImg()">deleteImg</button>
+        </div>
+
+        <button type="submit">{{ editStatus ? "Save" : "Add" }}</button>
+      </form>
+    </div>
+  </ng-container>
+
+  <form>
+    <table>
+      <thead>
+        <tr>
+          <td>Category</td>
+          <td>Name</td>
+          <td>Path</td>
+          <td>Weight</td>
+          <td>Consist</td>
+          <td>Price</td>
+          <td>Image</td>
+          <td>Actions</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of adminProducts">
+          <td>{{ action.category }}</td>
+          <td>
+            {{ action.name | slice : 0 : 10 }}
+            <span *ngIf="action.consist.length > 30">...</span>
+          </td>
+          <td>
+            {{ action.path | slice : 0 : 10 }}
+            <span *ngIf="action.consist.length > 30">...</span>
+          </td>
+          <td>{{ action.weight }}</td>
+          <td>
+            {{ action.consist | slice : 0 : 20 }}
+            <span *ngIf="action.consist.length > 30">...</span>
+          </td>
+          <td>{{ action.price }}</td>
+          <td><img [src]="action.imagePath" /></td>
+          <td>
+            <button type="button" (click)="deleteAction(action)">Delete</button>
+            <button type="button" (click)="editAction(action)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

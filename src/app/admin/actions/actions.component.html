@@ -1,0 +1,86 @@
+<div class="actions-container">
+  <button
+    (click)="textAction = !textAction"
+    class="textAction"
+    type="button"
+    [textContent]="textAction ? 'Add Action' : 'Look Actions'"
+  ></button>
+  <ng-container *ngIf="textAction">
+    <form>
+      <table>
+        <thead>
+          <tr>
+            <td>Date</td>
+            <td>Name</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Image</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let action of adminActions">
+            <td>{{ action.date | date }}</td>
+            <td>{{ action.name }}</td>
+            <td>{{ action.title }}</td>
+            <td>{{ action.description | slice : 0 : 30 }}</td>
+            <td><img [src]="action.imagePath" /></td>
+            <td>
+              <button type="button" (click)="deleteAction(action)">
+                Delete
+              </button>
+              <button type="button" (click)="editAction(action)">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="!textAction">
+    <div>
+      <form
+        [formGroup]="actionsForm"
+        (ngSubmit)="addAction()"
+        class="mainAddActions"
+      >
+        <div class="newName">
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="Name of action..."
+          />
+        </div>
+        <div class="newTitle">
+          <input
+            formControlName="title"
+            type="text"
+            placeholder="write title here..."
+          />
+        </div>
+        <div class="newDescription">
+          <textarea
+            formControlName="description"
+            placeholder="write description here..."
+          ></textarea>
+        </div>
+        <div *ngIf="!isUploaded">
+          <div class="newFile">
+            <input type="file" id="formFile" (change)="upload($event)" />
+          </div>
+          <h2>Percent:{{ uploadPercentage }}</h2>
+        </div>
+        <div *ngIf="isUploaded">
+          <img
+            width="400px "
+            height="300px"
+            [src]="valueByControl('imagePath')"
+            alt=""
+          />
+          <button type="button" (click)="deleteImg()">deleteImg</button>
+        </div>
+
+        <button type="submit">{{ editStatus ? "Save" : "Add" }}</button>
+      </form>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,75 @@
+<div class="actions-container">
+  <button
+    (click)="textAction = !textAction"
+    class="textAction"
+    type="button"
+    [textContent]="textAction ? 'Add Category' : 'Look Category'"
+  ></button>
+  <ng-container *ngIf="textAction">
+    <form>
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Path</td>
+            <td>Image</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of adminCategory">
+            <td>{{ category.name }}</td>
+            <td>{{ category.path }}</td>
+            <td><img [src]="category.imagePath" /></td>
+            <td>
+              <button (click)="deleteCategory(category)">Delete</button>
+              <button (click)="editCategory(category)">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="!textAction">
+    <div>
+      <form
+        [formGroup]="categoryForm"
+        (ngSubmit)="addCategory()"
+        class="mainAddCategory"
+      >
+        <div class="newName">
+          <input
+            formControlName="name"
+            type="text"
+            placeholder="Name of category..."
+          />
+        </div>
+        <div class="newTitle">
+          <input
+            formControlName="path"
+            type="text"
+            placeholder="write path here..."
+          />
+        </div>
+
+        <div *ngIf="!isUploaded">
+          <div class="newFile">
+            <input type="file" id="formFile" (change)="upload($event)" />
+          </div>
+          <h2>Percent:{{ uploadPercentage }}</h2>
+        </div>
+        <div *ngIf="isUploaded">
+          <img
+            width="400px "
+            height="300px"
+            [src]="valueByControl('imagePath')"
+            alt=""
+          />
+          <button type="button" (click)="deleteImg()">deleteImg</button>
+        </div>
+
+        <button type="submit">{{ editStatus ? "Save" : "Add" }}</button>
+      </form>
+    </div>
+  </ng-container>
+</div>

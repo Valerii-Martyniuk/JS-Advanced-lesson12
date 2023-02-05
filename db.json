@@ -1,0 +1,145 @@
+{
+  "actions": [
+    {
+      "id": 1,
+      "date": "2023",
+      "name": "3+1=5",
+      "title": "3+1+5",
+      "description": "Order 5 roles and pay for 4.<br>\nOrder 10 rolls, and pay for 8, and so on.<br>\nThe roll with the lowest value is considered free.<br>\nThis promotion cannot be combined with other promotions.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FactionsImg%2F3%2B1%3D5.jpg?alt=media&token=667bd8ac-4c07-4358-85b7-7c8f38fea949"
+    },
+    {
+      "date": "2023-01-29T19:25:30.084Z",
+      "name": " Pickup",
+      "title": "Pickup",
+      "description": "Baked mono maki with salmon as a gift.<br>\nNo minimum order amount.<br>\nThe waiting time for an order is up to 30 minutes.<br>\nIn order to receive a promotional roll as a gift, the minimum order amount is 300 UAH.<br>\nThis promotion cannot be combined with other promotions.<br>",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FactionsImg%2Ftake%20away.jpg?alt=media&token=ef374a12-253c-48f4-a64f-95bb029ccf13",
+      "id": 3
+    },
+    {
+      "date": "2023-01-29T19:33:47.682Z",
+      "name": "Role of the week",
+      "title": "50% discount on \"Role of the week",
+      "description": "Every week there is a 50% discount on one of the rolls on our menu.<br>\nYou can find the \"Role of the Week\" on the main page of our website.<br>\nThe discount is valid for a minimum order amount of UAH 300.<br>\nThis promotion cannot be combined with other promotions.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FactionsImg%2F-50%25.jpg?alt=media&token=f0399cff-7bcf-476a-aeea-7179d93062d7",
+      "id": 4
+    }
+  ],
+  "categorys": [
+    {
+      "name": "rolls",
+      "path": "rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FcategoryImg%2Frolls.icon.svg?alt=media&token=b8396d54-9e43-43ad-91b2-68e4ea632cc3",
+      "id": 2
+    },
+    {
+      "name": "sets",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FcategoryImg%2Fsets.icon.svg?alt=media&token=3e16d801-537f-4d70-8abc-f1c5fed032b1",
+      "id": 3
+    },
+    {
+      "name": "drinks",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FcategoryImg%2Fdrinks.icon.svg?alt=media&token=c2805cb3-e757-454c-bc90-127b1b6d23d1",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "category": "rolls",
+      "name": " Philadelphia with salmon",
+      "path": " philadelphia-with-salmon",
+      "weight": 280,
+      "consist": "\nRice, cream cheese, cucumber, salmon",
+      "price": 247,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Ffiladelfiya-z-lososem.jpg?alt=media&token=c94645f9-4099-48bd-be92-5d05d00363b7",
+      "count": 1,
+      "id": 1
+    },
+    {
+      "category": "rolls",
+      "name": " Cheesy",
+      "path": " cheesy",
+      "weight": 240,
+      "consist": "\nRice, cream cheese, feta, sesame",
+      "price": 164,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Fsyrnyj.jpg.jpg?alt=media&token=1e67dcc3-a642-4060-afce-32178a25d372",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": "rolls",
+      "name": "Philadelphia in sesame",
+      "path": "philadelphia-in-sesame",
+      "weight": 240,
+      "consist": "Rice, cream cheese, cucumber, salmon, sesame",
+      "price": 228,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Ffiladelfiya-v-kunzhuti.jpg?alt=media&token=476e1a5e-93d0-4945-8708-e6825fe67889",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": "rolls",
+      "name": "Philadelphia with tuna",
+      "path": "philadelphia-with-tuna",
+      "weight": 270,
+      "consist": "\nRice, cream cheese, avocado, tuna, sweet chili sauce",
+      "price": 280,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Fphiladelphia-width-tunajpg.jpg?alt=media&token=d6f8065f-c37b-4d33-90da-42a43198b0e0",
+      "count": 1,
+      "id": 4
+    },
+    {
+      "category": "drinks",
+      "name": "Pepsi",
+      "path": "pepsi",
+      "weight": 0.33,
+      "consist": "pepsi",
+      "price": 35,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Fpepsicola.jpg?alt=media&token=812daa0a-2511-4152-afdd-18b8c20e3c39",
+      "count": 1,
+      "id": 5
+    },
+    {
+      "category": "sets",
+      "name": " Seth Philadelphia",
+      "path": "seth-philadelphia",
+      "weight": 1070,
+      "consist": "Philadelphia: with salmon / in sesame / with tuna / with eel",
+      "price": 999,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2FFiladelfiya-SET.jpg?alt=media&token=c9328169-76c1-4797-9647-5e8765122c69",
+      "count": 1,
+      "id": 6
+    },
+    {
+      "category": "souces",
+      "name": "Wasabi",
+      "path": "wasabi",
+      "weight": 25,
+      "consist": "wasabi",
+      "price": 12,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FproductsImg%2Fvasabi-sous.png?alt=media&token=855dc7ae-9a8e-4fc0-99c1-df33c6da7d05",
+      "count": 1,
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Valerii",
+      "email": "admin@gmail.com",
+      "password": "111",
+      "path": "/admin",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "Petro",
+      "email": "user@gmail.com",
+      "password": "111",
+      "path": "/user",
+      "role": "USER"
+    }
+  ]
+}
