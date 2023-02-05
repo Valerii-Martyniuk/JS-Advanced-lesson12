@@ -1,0 +1,33 @@
+<div class="productCard">
+  <div class="productCard-data">
+    <img [src]="currentProduct.imagePath" alt="..." />
+    <div class="ProductInfo-section">
+      <h3>
+        <b>{{ currentProduct.name }}</b>
+      </h3>
+      <div class="productCard-consist">
+        <p>
+          <span><b>Consist: </b></span>{{ currentProduct.consist }}
+        </p>
+        <p>
+          <span><b>Weight: </b></span>{{ currentProduct.weight }}g
+        </p>
+      </div>
+      <div class="productCard-controls">
+        <span
+          ><b>{{ currentProduct.price }} $</b></span
+        >
+        <div class="productCard-count">
+          <button type="button" (click)="countProduct(currentProduct, false)">
+            -
+          </button>
+          <span>{{ currentProduct.count }}</span>
+          <button type="button" (click)="countProduct(currentProduct, true)">
+            +
+          </button>
+        </div>
+        <button type="button" (click)="addBasket(currentProduct)">Order</button>
+      </div>
+    </div>
+  </div>
+</div>

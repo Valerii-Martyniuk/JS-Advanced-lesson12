@@ -1,0 +1,82 @@
+@import "../../shared/styles/variables";
+.actionNameBack {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    letter-spacing: 3px;
+    padding: 10px 0;
+    font-size: 42px;
+    // border-top: 5px solid #000;
+    position: relative;
+  }
+  width: 70%;
+  height: 180px;
+  margin: 0 auto;
+  background-color: $primary;
+  border-radius: 10px;
+}
+.actionNameBack {
+  span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+  }
+}
+.actionDescription {
+  width: 70%;
+  margin: 0 auto;
+  ul {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  li {
+    font-size: 18px;
+    margin-left: 25px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -25px;
+    width: 20px;
+    height: 20px;
+    background-color: $primary;
+    border-radius: 50%;
+    outline: 1px solid $primary;
+    border: 4px solid #fff;
+  }
+}
+
+////////////////////////800PX////////////////////
+@media screen and (max-width: 800px) {
+  .actionNameBack {
+    width: 100%;
+    span {
+      letter-spacing: 2px;
+      font-size: 34px;
+    }
+    width: 80%;
+  }
+
+  .actionDescription {
+    width: 80%;
+    li {
+      font-size: 16px;
+      position: relative;
+    }
+    li::before {
+      width: 15px;
+      height: 15px;
+      border: 3px solid #fff;
+    }
+  }
+}

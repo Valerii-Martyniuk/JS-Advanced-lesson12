@@ -1,0 +1,25 @@
+<div class="profile-container">
+  <div class="profile-type">
+    <button>Personal data</button>
+    <button>Order history</button>
+    <button>Password change</button>
+  </div>
+  <form class="profile-data" [formGroup]="userForm">
+    <h2>Personal Data</h2>
+    <input
+      class="shortInput"
+      type="text"
+      placeholder="First Name"
+      formControlName="firstName"
+    />
+    <input
+      class="shortInput"
+      type="text"
+      placeholder="Last Name"
+      formControlName="lastName"
+    />
+    <input type="text" placeholder="Number" formControlName="phoneNumber" />
+    <input type="text" placeholder="Email" formControlName="email" />
+    <button><b>Save Info</b></button>
+  </form>
+</div>

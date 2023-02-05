@@ -1,0 +1,125 @@
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/variables";
+
+.rolls-container {
+  width: 100%;
+}
+.rolls-categorys-box {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.roll-category {
+  @include dAndaAndj(flex, center, center);
+  @include wAndH(166px, 61px);
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  text-decoration: none;
+  color: #5a5a5a;
+}
+.bor-righ {
+  border-right: 1px solid #000;
+}
+.allProducts-box {
+  @include dAndaAndj(flex, space-between, center);
+  flex-wrap: wrap;
+}
+.productCard {
+  @include dAndaAndj(flex, center, flex-end);
+  width: 25%;
+  // height: 470px;
+  min-height: 550px;
+  padding: 20px;
+}
+.productCard-data {
+  @include dAndaAndj(flex, center, center);
+  flex-wrap: wrap;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  min-height: 550px;
+  cursor: pointer;
+  img {
+  }
+  h3 {
+    width: 100%;
+    // margin: 20px 0;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+.productCard-data:hover {
+  border: 1px solid $primary;
+}
+.productCard-consist {
+  // margin: 20px 0;
+  span {
+    display: block;
+    width: 50px;
+    text-align: right;
+  }
+  @include wAndH(100%, 100%);
+  @include dAndaAndj(flex, space-between, center);
+}
+.productCard-controls {
+  margin: 10px 0;
+  @include wAndH(100%, 100%);
+  @include dAndaAndj(flex, space-between, center);
+  button {
+    height: 21px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary;
+  }
+}
+.productCard-count {
+  border: 1px solid silver;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  button {
+    height: 80%;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 30px;
+  }
+  span {
+    text-align: center;
+    display: block;
+    width: 40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .productCard {
+    @include dAndaAndj(flex, center, flex-end);
+    width: 33%;
+    min-height: 450px;
+  }
+  .productCard-data {
+    min-height: 450px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .productCard {
+    @include dAndaAndj(flex, center, flex-end);
+    width: 50%;
+    min-height: 350px;
+  }
+  .productCard-data {
+    min-height: 350px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .rolls-categorys-box {
+    display: none;
+  }
+  .productCard {
+    @include dAndaAndj(flex, center, flex-end);
+    width: 100%;
+  }
+}

@@ -1,0 +1,96 @@
+@import "../../shared/styles/variables";
+.profile-container {
+  margin: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-type {
+  width: 200px;
+  button {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid silver;
+    transition-duration: 0.2s;
+    font-size: 16px;
+  }
+}
+.profile-data {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  width: 50%;
+  h2 {
+    width: 100%;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .shortInput {
+    width: 45%;
+  }
+  input {
+    padding-left: 10px;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 16px;
+  }
+  button {
+    background-color: #fff;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 16px;
+    transition-duration: 0.3s;
+  }
+  button:hover {
+    background-color: $primary;
+  }
+}
+/////////////////////////////////////////////////////////
+@media screen and (max-width: 1200px) {
+  .profile-container {
+    margin: 40px;
+  }
+
+  .profile-type {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    button {
+      margin-bottom: 0px;
+      width: 32%;
+      height: 40px;
+      font-size: 12px;
+    }
+  }
+  form {
+    width: 100%;
+  }
+  .profile-data {
+    margin-left: 0px;
+    width: 100%;
+    h2 {
+      font-size: 22px;
+    }
+
+    input {
+      padding-left: 10px;
+      height: 30px;
+      font-size: 14px;
+    }
+    button {
+      height: 30px;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: $primary;
+    }
+  }
+}

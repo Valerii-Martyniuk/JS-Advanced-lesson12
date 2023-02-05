@@ -1,0 +1,13 @@
+@mixin wAndH($w, $h) {
+  width: $w;
+  height: $h;
+}
+@mixin dAndaAndj($d, $j, $a) {
+  display: $d;
+  justify-content: $j;
+  align-items: $a;
+}
+
+///////////////////////////////////////////////////
+///
+///

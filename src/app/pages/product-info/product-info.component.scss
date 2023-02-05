@@ -1,0 +1,169 @@
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/variables";
+span {
+  font-size: 18px;
+}
+p {
+  font-size: 18px;
+  width: 100%;
+  margin: 10px 0;
+  span {
+    color: $primary;
+  }
+}
+.productCard {
+  @include dAndaAndj(flex, center, center);
+  width: 70%;
+  margin: 0 auto;
+  height: 470px;
+  padding: 20px;
+}
+.productCard-data {
+  width: 100%;
+  @include dAndaAndj(flex, center, center);
+  img {
+    max-width: 528px;
+    max-height: 350px;
+    // width: 100%;
+    // height: 100%;
+    margin: 48px 0;
+  }
+}
+.ProductInfo-section {
+  // min-width: 310px;
+  margin-left: 70px;
+  h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+  }
+}
+.productCard-consist {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  @include wAndH(100%, 100%);
+  @include dAndaAndj(flex, space-between, center);
+}
+.productCard-controls {
+  font-size: 20px;
+  margin: 10px 0;
+  @include wAndH(100%, 100%);
+  @include dAndaAndj(flex, space-between, center);
+  button {
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary;
+  }
+}
+.productCard-count {
+  border: 1px solid silver;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  button {
+    height: 80%;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 30px;
+  }
+  span {
+    text-align: center;
+    display: block;
+    width: 40px;
+  }
+}
+//////////////////1600PX//////////
+@media screen and (max-width: 1600px) {
+  .productCard {
+    @include dAndaAndj(flex, center, center);
+    width: 80%;
+    padding: 10px;
+  }
+  .productCard-data {
+    width: 100%;
+    img {
+      width: 330px;
+      height: 220px;
+      margin: 48px 0;
+    }
+  }
+  .ProductInfo-section {
+    width: 430px;
+    margin-left: 70px;
+    h3 {
+      width: 100%;
+      text-align: center;
+      font-size: 42px;
+    }
+  }
+}
+//////////////////////
+@media screen and (max-width: 900px) {
+  .productCard {
+    @include dAndaAndj(flex, center, center);
+    width: 95%;
+    margin: 0 auto;
+    // height: 470px;
+    padding: 10px;
+  }
+  .productCard-data {
+    img {
+      width: 328px;
+      height: 140px;
+    }
+  }
+  .ProductInfo-section {
+    width: 328px;
+    margin-left: 30px;
+    h3 {
+      font-size: 38px;
+    }
+  }
+}
+
+//////////////////////
+@media screen and (max-width: 750px) {
+  .productCard {
+    @include dAndaAndj(flex, center, center);
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .productCard-data {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      max-width: 500px;
+      max-height: 290px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .ProductInfo-section {
+    // min-width: none;
+    max-width: 500px;
+    width: 100%;
+    margin-left: 0px;
+    h3 {
+      text-align: left;
+      font-size: 38px;
+    }
+  }
+  .productCard-count {
+    height: 30px;
+    button {
+      width: 20px;
+    }
+    span {
+      text-align: center;
+      display: block;
+      width: 30px;
+    }
+  }
+}

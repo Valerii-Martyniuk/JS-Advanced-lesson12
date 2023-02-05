@@ -1,0 +1,53 @@
+<div class="rolls-container">
+  <!-- <div class="spacerMT"></div>
+  <div class="centerInfo">
+    <span class="centerInfoTitle">{{ categoryName | upper }}</span>
+  </div> -->
+
+  <div class="rolls-categorys-box">
+    <a href="#" class="roll-category">All</a>
+    <a href="#" class="roll-category">Philadelphia</a>
+    <a href="#" class="roll-category">California</a>
+    <a href="#" class="roll-category">Locked</a>
+    <a href="#" class="roll-category">Brand</a>
+    <a href="#" class="roll-category">Premium</a>
+    <a href="#" class="roll-category bor-righ">Maki</a>
+  </div>
+
+  <div class="allProducts-box">
+    <div class="productCard" *ngFor="let product of adminProducts">
+      <div class="productCard-data">
+        <img
+          [style.width]="Imgwidth"
+          [routerLink]="['/product/' + product.category, product.id]"
+          [src]="product.imagePath"
+          alt="..."
+        />
+        <h3>
+          <b>{{ product.name }}</b>
+        </h3>
+        <div class="productCard-consist">
+          <p>{{ product.consist }}</p>
+          <span
+            ><b>{{ product.weight }}g</b></span
+          >
+        </div>
+        <div class="productCard-controls">
+          <span
+            ><b>{{ product.price }} $</b></span
+          >
+          <div class="productCard-count">
+            <button type="button" (click)="countProduct(product, false)">
+              -
+            </button>
+            <span>{{ product.count }}</span>
+            <button type="button" (click)="countProduct(product, true)">
+              +
+            </button>
+          </div>
+          <button type="button" (click)="addBasket(product)">Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

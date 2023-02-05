@@ -1,0 +1,190 @@
+@import "../../shared/styles/mixins";
+@import "../../shared/styles/variables";
+
+.footer-container {
+  @include dAndaAndj(flex, center, center);
+  flex-wrap: wrap;
+  @include wAndH(100%, 177px);
+  border-top: 5px solid $primary;
+  padding: 20px 35px;
+}
+//////////////////////////
+.footer-section1 {
+  @include wAndH(100%, 67px);
+  @include dAndaAndj(flex, space-between, center);
+  padding-bottom: 20px;
+  img {
+    @include wAndH(136px, 51px);
+  }
+}
+.footer-info-about {
+  @include dAndaAndj(flex, space-between, center);
+  width: 255px;
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+.footer-info-box {
+  font-size: 14px;
+  width: 764px;
+  @include dAndaAndj(flex, space-between, flex-start);
+}
+.footer-info {
+  text-align: center;
+  p {
+    margin-bottom: 10px;
+  }
+}
+//////////////////////////
+.footer-section2 {
+  @include wAndH(100%, 49px);
+  @include dAndaAndj(flex, space-between, center);
+  font-size: 14px;
+}
+
+.footer-payment {
+  width: 217px;
+  @include dAndaAndj(flex, space-between, center);
+  img {
+    @include wAndH(69px, 39px);
+    padding: 5px;
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+  }
+}
+.footer-our-pages {
+  @include dAndaAndj(flex, space-between, center);
+  width: 185px;
+  span {
+    width: 77px;
+  }
+  a {
+    display: block;
+    @include dAndaAndj(flex, center, center);
+    @include wAndH(49px, 49px);
+    background-color: $primary;
+    border-radius: 5px;
+  }
+}
+////////////////////////// 1600px  //////////////////////////
+@media screen and (max-width: 1600px) {
+  .footer-info-box {
+    width: 533px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .footer-info-about {
+    width: 233px;
+  }
+}
+////////////////////////// 1200px  //////////////////////////
+@media screen and (max-width: 1200px) {
+  .footer-container {
+    padding: 15px 15px;
+  }
+  .footer-section1 {
+    @include wAndH(100%, 67px);
+    @include dAndaAndj(flex, space-between, center);
+    padding-bottom: 15px;
+    img {
+      @include wAndH(110px, 42px);
+    }
+  }
+  .footer-info-about {
+    width: 160px;
+  }
+  .footer-info-box {
+    width: 500px;
+  }
+  .footer-payment {
+    img {
+      @include wAndH(56px, 33px);
+    }
+  }
+  .footer-our-pages {
+    @include dAndaAndj(flex, space-between, center);
+    width: 155px;
+    span {
+      width: 77px;
+    }
+    a {
+      @include wAndH(35px, 35px);
+      border-radius: 5px;
+    }
+  }
+}
+////////////////////////// 900px  //////////////////////////
+@media screen and (max-width: 900px) {
+  div {
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  .footer-container {
+    @include dAndaAndj(flex, center, center);
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 15px 15px;
+  }
+  //////////////////////////
+  .footer-section1 {
+    height: 100%;
+    @include dAndaAndj(flex, center, center);
+    flex-wrap: wrap;
+    padding-bottom: 0px;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .footer-info-about {
+    @include dAndaAndj(flex, center, center);
+    flex-wrap: wrap;
+    width: 100%;
+    a {
+      margin: 10px 10px;
+    }
+  }
+  .footer-info-box {
+    width: 100%;
+    @include dAndaAndj(flex, center, center);
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .footer-info {
+    width: 100%;
+    p {
+      margin-bottom: 5px;
+    }
+  }
+  //////////////////////////
+  .footer-section2 {
+    margin-bottom: 50px;
+    height: 100%;
+    @include dAndaAndj(flex, center, center);
+    flex-wrap: wrap;
+    span {
+      display: none;
+    }
+  }
+
+  .footer-payment {
+    width: 100%;
+    @include dAndaAndj(flex, center, center);
+    img {
+      margin: 0 5px;
+    }
+  }
+  .footer-our-pages {
+    @include dAndaAndj(flex, center, center);
+    width: 100%;
+    span {
+      display: none;
+    }
+    a {
+      margin: 0 10px;
+    }
+  }
+}

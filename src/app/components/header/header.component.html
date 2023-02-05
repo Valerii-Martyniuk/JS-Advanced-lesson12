@@ -1,0 +1,227 @@
+<div class="header">
+  <div class="rr">
+    <!-- ////LOGO -->
+    <div class="logo" [routerLink]="['']" routerLinkActive="active">
+      <img
+        class="logo-img"
+        src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Flogo.svg?alt=media&token=fb5799b4-fea6-4534-afed-5a56c7c4350b"
+        alt="logo.img"
+      />
+    </div>
+    <!-- ////Menu -->
+    <div class="main-menu">
+      <a [routerLink]="['/action']" routerLinkActive="active" class="type-menu">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Factions.icon.svg?alt=media&token=d84caecb-17f4-44fe-bd3a-a9e914fcc69c"
+          alt="icon.menu"
+          class="main-menu-img"
+        />
+        <span>actions</span>
+      </a>
+      <a
+        *ngFor="let component of adminCategory"
+        [routerLink]="'/product/' + component.path"
+        routerLinkActive="active"
+        class="type-menu"
+      >
+        <img
+          [src]="component.imagePath"
+          alt="icon.menu"
+          class="main-menu-img"
+        />
+        <span>{{ component.name }}</span>
+      </a>
+      <a
+        [routerLink]="['/product/souces']"
+        routerLinkActive="active"
+        class="type-menu display-phone"
+      >
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fsouces.icon.svg?alt=media&token=945e49cf-3fb8-4a19-90fd-b78cee75e02d"
+          alt="icon.menu"
+          class="main-menu-img"
+        />
+        <span>souces</span>
+      </a>
+
+      <div (click)="isNavItems = !isNavItems" class="display-phone menu-bar">
+        <div class="menu-bar-items" *ngIf="isNavItems">
+          <div class="aclickk">
+            <a class="aclickk2" [routerLink]="['/paiment.delivery']">
+              Delivery and Payment</a
+            >
+          </div>
+          <div class="aclickk" [routerLink]="['/about']">
+            <a class="aclickk2"> About</a>
+          </div>
+        </div>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fphone.menu.icon.png?alt=media&token=531d9558-f721-40a2-8349-712f5048d7a9"
+          alt="icon.menu.phone"
+          class="main-menu-img-phone zind"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- ////Info Phone-->
+  <div class="contacts">
+    <a class="contacts-menu">
+      <div class="contacts-phone">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fphone.icon.svg?alt=media&token=d19ae77c-bb74-4f98-b6eb-b327462af668"
+          alt="icon.menu.phone"
+          class="contacts-img-phone"
+        />
+        <span><b>we will call you</b></span>
+      </div>
+    </a>
+
+    <div class="number-info">
+      <a class="text-hover">(097) 998 88 99</a>
+      <p>we work from <b>10am</b> to <b>9pm</b></p>
+    </div>
+
+    <div class="contacts-user" (click)="openLogin()">
+      <a class="type-menu" class="contacts-menu">
+        <div class="">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fuser-img.svg?alt=media&token=d8918fd8-b431-4f75-b77d-f1608b23f4d7"
+            alt="icon.menu.phone"
+            class="contacts-img-user"
+          />
+        </div>
+        <span>Valerii</span>
+      </a>
+    </div>
+    <!-- ///////// -->
+    <ng-container *ngIf="userData.isLogin">
+      <div class="infoUserTop">
+        <span>{{ userData.name }}</span>
+        <div class="contacts-user">
+          <a
+            [routerLink]="[userData.path]"
+            routerLinkActive="active"
+            class="type-menu"
+            class="contacts-menu"
+          >
+            <div>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fuser-img.svg?alt=media&token=d8918fd8-b431-4f75-b77d-f1608b23f4d7"
+                alt="icon.menu.phone"
+                class="contacts-img-user"
+              />
+            </div>
+          </a>
+        </div>
+
+        <button type="button" (click)="logOut()">Log Out</button>
+      </div>
+    </ng-container>
+
+    <div class="contacts-user2">
+      <a class="contacts-menu2">
+        <div class="">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fphone.menu.icon.png?alt=media&token=531d9558-f721-40a2-8349-712f5048d7a9"
+            alt="icon.menu.phone"
+            class="contacts-img-user2"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- //////Basket -->
+  <div class="basket" (click)="isBasket = !isBasket">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/monosushi-85c62.appspot.com/o/images%2FheaderImg%2Fbasket.icon.svg?alt=media&token=40700e68-cdc2-4713-8684-e5fa4c7e48cf"
+      alt="menu.basket"
+    />
+    <span class="basket-span">{{ basketInfo.count }}</span>
+    <span class="bs-span"
+      ><b>{{ basketInfo.total }}</b> $</span
+    >
+  </div>
+  <!-- /////////LOGIN TABLE -->
+  <!-- <ng-container *ngIf="isLoginTable">
+    <div class="mainLoginContainer">
+      <div class="loginContainer">
+        <div class="btnExit">
+          <span (click)="isLoginTable = false"><b>Exit</b></span>
+        </div>
+        <form [formGroup]="loginForm">
+          <p><b>Log In</b></p>
+          <label for="email">email</label>
+          <input type="text" id="email" formControlName="email" />
+          <label for="password">password</label>
+          <input type="password" id="password" formControlName="password" />
+          <button *ngIf="isAccount" type="button" (click)="login()">
+            <b>Log In</b>
+          </button>
+          <button *ngIf="!isAccount" type="button" (click)="create()">
+            <b>Create</b>
+          </button>
+          <h4 (click)="isAccount = !isAccount">
+            {{ isAccount ? "Dont Have an account?" : "Have an account?" }}
+          </h4>
+        </form>
+      </div>
+    </div>
+  </ng-container> -->
+</div>
+<!-- /////////BASKET TABLE INFO-->
+<ng-container *ngIf="isBasket">
+  <div class="basketData" [style.margin-top]="margTop">
+    <div class="basketInfo">
+      <div class="basketProducts">
+        <div class="productOrdered" *ngFor="let product of basket; index as i">
+          <img [src]="product.imagePath" alt="..." width="100px" />
+          <h3>{{ product.name }}</h3>
+          <div>
+            <div class="basketCard-count">
+              <button
+                class="basketInfo-btn"
+                type="button"
+                (click)="countProduct(product, false)"
+              >
+                -
+              </button>
+              <span>{{ product.count }}</span>
+              <button
+                class="basketInfo-btn"
+                type="button"
+                (click)="countProduct(product, true)"
+              >
+                +
+              </button>
+            </div>
+            <span>{{ product.count * product.price }} $</span>
+            <button
+              class="trashBasket-btn"
+              type="button"
+              (click)="deletBasketProduct(product)"
+            >
+              <div class="can">
+                <div class="can-head">
+                  <div class="Can-h-1"></div>
+                  <div class="Can-h-2"></div>
+                </div>
+                <div class="can-body">
+                  <div class="Can-b-1"></div>
+                  <div class="Can-b-1"></div>
+                  <div class="Can-b-1"></div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="basketOrder">
+        <span
+          >Bill:<b> {{ basketInfo.total }}</b> $</span
+        >
+        <button type="button">Make a order</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

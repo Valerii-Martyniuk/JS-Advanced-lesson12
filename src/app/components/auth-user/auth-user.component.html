@@ -1,0 +1,104 @@
+<div class="loginContainer">
+  <div class="btnExit">
+    <span (click)="closeComponent()"><b>Exit</b></span>
+  </div>
+
+  <p>
+    <b>{{ isAccount ? "Log in" : "Create account" }}</b>
+  </p>
+  <ng-container *ngIf="isAccount">
+    <form [formGroup]="loginForm">
+      <div class="input-form">
+        <input class="inp" type="text" id="email" formControlName="email" />
+        <label class="label" for="email">email</label>
+      </div>
+      <div class="input-form">
+        <input
+          class="inp"
+          type="password"
+          id="password"
+          formControlName="password"
+        />
+        <label class="label" for="password">password</label>
+      </div>
+    </form></ng-container
+  >
+
+  <ng-container *ngIf="!isAccount">
+    <form [formGroup]="authForm">
+      <div class="create-user-div">
+        <div class="input-form-short">
+          <input
+            class="inp"
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+          />
+          <label class="label" for="firstName">first name</label>
+        </div>
+        <div class="input-form-short">
+          <input
+            class="inp"
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+          />
+          <label class="label" for="secondName">second name</label>
+        </div>
+
+        <div class="input-form">
+          <input class="inp" type="text" id="email" formControlName="email" />
+          <label class="label" for="email">email</label>
+        </div>
+
+        <div class="input-form">
+          <input
+            class="inp"
+            type="text"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+          />
+          <label class="label" for="phoneNumber">phone number</label>
+        </div>
+
+        <div class="input-form-short">
+          <input
+            class="inp"
+            type="password"
+            id="password"
+            formControlName="password"
+          />
+          <label class="label" for="password">password</label>
+        </div>
+        <div class="input-form-short">
+          <input
+            class="inp"
+            type="password"
+            id="passwordCheck"
+            formControlName="passwordCheck"
+          />
+          <label class="label" for="passwordCheck">password cover</label>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+  <button
+    *ngIf="isAccount"
+    type="button"
+    (click)="login()"
+    [disabled]="loginForm.invalid"
+  >
+    <b>Log In</b>
+  </button>
+  <button
+    *ngIf="!isAccount"
+    type="button"
+    (click)="create()"
+    [disabled]="authForm.invalid"
+  >
+    <b>Create</b>
+  </button>
+  <h4 (click)="isAccount = !isAccount">
+    {{ isAccount ? "Dont Have an account?" : "Have an account?" }}
+  </h4>
+</div>
